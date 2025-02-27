@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import ParticleSystem from '@/components/common/ParticleSystem';
 import Footer from '@/components/common/Footer';
+import CharacterProfile from '@/components/common/CharacterProfile';
+import ChapterCard from '@/components/common/ChapterCard';
 
 const chapters = [
   { id: 'cemetery-souls', title: 'Cemetery Souls' },
@@ -83,20 +85,35 @@ const GregReevesPage = () => {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col md:flex-row gap-6">
           <aside className="md:w-1/4">
-            <div className="bg-[#1A1E26] rounded-lg p-6 mb-6 shadow-lg border border-[#2D2D2D]">
-              <div className="aspect-square bg-[#2D2D2D] rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-6xl">👤</span>
-              </div>
-              <h2 className="font-serif text-2xl text-[#FF9E2C] mb-2">Greg Reeves</h2>
-              <p className="text-[#E8E8E8] text-sm mb-4">
-                Musician, father, and a man haunted by his past mistakes. Greg's journey through grief and addiction forms the emotional core of The Casket Diaries.
-              </p>
-              <div className="space-y-1 text-sm">
-                <p><span className="text-[#FF9E2C]">Age:</span> <span className="text-[#F5F5F5]">35</span></p>
-                <p><span className="text-[#FF9E2C]">Occupation:</span> <span className="text-[#F5F5F5]">Musician / Recording Studio Owner</span></p>
-                <p><span className="text-[#FF9E2C]">Hometown:</span> <span className="text-[#F5F5F5]">Grand Rapids, MI</span></p>
-              </div>
-            </div>
+            <CharacterProfile
+              name="Greg Reeves"
+              fallbackEmoji="🎸"
+              themeColor="#FF9E2C"
+              description="Musician, father, and a man haunted by his past mistakes. Greg's journey through grief and addiction forms the emotional core of The Casket Diaries."
+              details={[
+                { label: "Age", value: "35" },
+                { label: "Occupation", value: "Musician / Recording Studio Owner" },
+                { label: "Hometown", value: "Grand Rapids, MI" }
+              ]}
+              traits={[
+                { 
+                  name: "Resilience", 
+                  icon: "🛡️", 
+                  description: "Despite encountering numerous hardships, Greg has shown an incredible ability to endure and rebuild himself from the ashes of his mistakes."
+                },
+                { 
+                  name: "Addiction", 
+                  icon: "⛓️", 
+                  description: "Greg's struggle with substance abuse has been a defining element of his journey, representing both his greatest weakness and a catalyst for profound change."
+                },
+                { 
+                  name: "Creativity", 
+                  icon: "🎵", 
+                  description: "Music has been Greg's lifeline, his means of processing trauma and expressing emotions too complex for words alone."
+                }
+              ]}
+              quote="Sometimes I wonder if I'm more ghost than man—haunting the edges of my own life, watching as everything I love slips through my fingers like smoke."
+            />
             
             <nav className="sticky top-10">
               <h3 className="text-[#F5F5F5] font-medium mb-2 px-2">Greg's Chapters</h3>

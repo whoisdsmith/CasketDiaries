@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import ParticleSystem from '@/components/common/ParticleSystem';
 import Footer from '@/components/common/Footer';
+import CharacterProfile from '@/components/common/CharacterProfile';
 
 const chapters = [
   { id: 'beneath-broken-roof', title: 'Beneath a Broken Roof' },
@@ -84,20 +85,35 @@ const SadieGrayPage = () => {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col md:flex-row gap-6">
           <aside className="md:w-1/4">
-            <div className="bg-[#1A1E26] rounded-lg p-6 mb-6 shadow-lg border border-[#2D2D2D]">
-              <div className="aspect-square bg-[#2D2D2D] rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-6xl">👤</span>
-              </div>
-              <h2 className="font-serif text-2xl text-[#FF9E2C] mb-2">Sadie Gray</h2>
-              <p className="text-[#E8E8E8] text-sm mb-4">
-                Artist, survivor, and a woman rediscovering her strength. Sadie's story is one of resilience in the face of devastating loss and the courage to start anew.
-              </p>
-              <div className="space-y-1 text-sm">
-                <p><span className="text-[#FF9E2C]">Age:</span> <span className="text-[#F5F5F5]">33</span></p>
-                <p><span className="text-[#FF9E2C]">Occupation:</span> <span className="text-[#F5F5F5]">Art Teacher / Painter</span></p>
-                <p><span className="text-[#FF9E2C]">Hometown:</span> <span className="text-[#F5F5F5]">Traverse City, MI</span></p>
-              </div>
-            </div>
+            <CharacterProfile
+              name="Sadie Gray"
+              fallbackEmoji="🎨"
+              themeColor="#FF9E2C"
+              description="Artist, survivor, and a woman rediscovering her strength. Sadie's story is one of resilience in the face of devastating loss and the courage to start anew."
+              details={[
+                { label: "Age", value: "33" },
+                { label: "Occupation", value: "Art Teacher / Painter" },
+                { label: "Hometown", value: "Traverse City, MI" }
+              ]}
+              traits={[
+                { 
+                  name: "Resilience", 
+                  icon: "💪", 
+                  description: "After enduring unimaginable loss, Sadie has rebuilt her life piece by piece, finding strength in the process of healing and creating art from pain."
+                },
+                { 
+                  name: "Intuition", 
+                  icon: "🔮", 
+                  description: "Sadie has always possessed a deep intuitive understanding of others, often knowing what they need before they do themselves."
+                },
+                { 
+                  name: "Creativity", 
+                  icon: "🖌️", 
+                  description: "Art has been Sadie's salvation, her method of processing grief and transforming tragedy into something that speaks to the universal human experience."
+                }
+              ]}
+              quote="I spent so long trying to fix what was broken in him that I forgot to notice what was breaking in me. Now, I'm learning to put those pieces back together—not for him, but for myself."
+            />
             
             <nav className="sticky top-10">
               <h3 className="text-[#F5F5F5] font-medium mb-2 px-2">Sadie's Chapters</h3>
