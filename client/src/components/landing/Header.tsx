@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { useLocation } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,7 +8,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const [_, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     // Show header after initial landing
@@ -54,49 +54,38 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="logo">
-          <h1 className="font-serif text-lg md:text-xl tracking-wide">
-            <span 
-              className="text-[#FF9E2C]"
-              style={{
-                textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)'
-              }}
-            >
-              The Casket Diaries
-            </span>
-          </h1>
+          <Link href="/">
+            <a className="cursor-pointer">
+              <h1 className="font-serif text-lg md:text-xl tracking-wide">
+                <span 
+                  className="text-[#FF9E2C]"
+                  style={{
+                    textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)'
+                  }}
+                >
+                  The Casket Diaries
+                </span>
+              </h1>
+            </a>
+          </Link>
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6 mr-4">
-            <a 
-              href="/about" 
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/about');
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
-            >
-              About
-            </a>
-            <a 
-              href="/greg-reeves" 
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/greg-reeves');
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
-            >
-              Greg Reeves
-            </a>
-            <a 
-              href="/sadie-gray" 
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/sadie-gray');
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
-            >
-              Sadie Gray
-            </a>
+            <Link href="/about">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+                About
+              </a>
+            </Link>
+            <Link href="/greg-reeves">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+                Greg Reeves
+              </a>
+            </Link>
+            <Link href="/sadie-gray">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+                Sadie Gray
+              </a>
+            </Link>
           </nav>
           <button 
             className="bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-4 py-2 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300 text-sm"
@@ -129,39 +118,30 @@ const Header = () => {
           className="absolute top-0 left-0 w-full h-screen bg-[#1A1A1A] bg-opacity-95 backdrop-blur-md z-30 py-20 px-6"
         >
           <div className="flex flex-col items-center space-y-6 pt-10">
-            <a 
-              href="/about" 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/about');
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              About
-            </a>
-            <a 
-              href="/greg-reeves" 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/greg-reeves');
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              Greg Reeves
-            </a>
-            <a 
-              href="/sadie-gray" 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={(e) => {
-                e.preventDefault();
-                setLocation('/sadie-gray');
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              Sadie Gray
-            </a>
+            <Link href="/about">
+              <a 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+            </Link>
+            <Link href="/greg-reeves">
+              <a 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Greg Reeves
+              </a>
+            </Link>
+            <Link href="/sadie-gray">
+              <a 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sadie Gray
+              </a>
+            </Link>
             <button 
               className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"
               onClick={() => {
