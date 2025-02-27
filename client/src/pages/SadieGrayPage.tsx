@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import ParticleSystem from '@/components/common/ParticleSystem';
 import Footer from '@/components/common/Footer';
 import CharacterProfile from '@/components/common/CharacterProfile';
+import ChapterCard from '@/components/common/ChapterCard';
 
 const chapters = [
   { id: 'beneath-broken-roof', title: 'Beneath a Broken Roof' },
@@ -120,16 +121,12 @@ const SadieGrayPage = () => {
               <ul className="space-y-1">
                 {chapters.map(chapter => (
                   <li key={chapter.id}>
-                    <button 
+                    <ChapterCard
+                      title={chapter.title}
+                      isActive={activeChapter === chapter.id}
                       onClick={() => setActiveChapter(chapter.id)}
-                      className={`w-full text-left px-4 py-2 rounded-md transition-colors ${
-                        activeChapter === chapter.id 
-                          ? 'bg-[#232B38] text-[#FF9E2C]' 
-                          : 'text-[#F5F5F5] hover:bg-[#2D2D2D]'
-                      }`}
-                    >
-                      {chapter.title}
-                    </button>
+                      themeColor="#FF9E2C"
+                    />
                   </li>
                 ))}
               </ul>
