@@ -8,6 +8,7 @@ import MeetingPointSection from '@/components/sections/MeetingPointSection';
 import CrucibleSection from '@/components/sections/CrucibleSection';
 import SideBySideSection from '@/components/sections/SideBySideSection';
 import EternalLightSection from '@/components/sections/EternalLightSection';
+import NewsletterForm from '@/components/common/NewsletterForm';
 import Footer from '@/components/common/Footer';
 
 const HomePage = () => {
@@ -105,6 +106,43 @@ const HomePage = () => {
               activeSection={activeSection} 
               onVisible={handleSectionVisible} 
             />
+            
+            {/* Newsletter Subscription Section */}
+            <section className="px-4 py-16 md:py-20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#1D1D1D] via-[#1D1D1D] to-[#2D2D2D] opacity-80"></div>
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `radial-gradient(circle at center, rgba(255, 158, 44, 0.3) 0%, rgba(29, 29, 29, 0) 70%)`,
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  animation: 'pulse 3s ease-in-out infinite alternate'
+                }}
+              ></div>
+              
+              <div className="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 className="font-serif text-3xl md:text-4xl text-[#FF9E2C] mb-6 glow-text">
+                  Join Our Journey
+                </h2>
+                <p className="text-[#E8E8E8] mb-10 max-w-2xl mx-auto">
+                  Subscribe to receive updates on new releases, author insights, and exclusive content.
+                  Be part of the story as it continues to unfold.
+                </p>
+                
+                <div className="bg-[#1A1E26] border border-[#2D2D2D] rounded-lg p-6 md:p-8 shadow-lg max-w-2xl mx-auto">
+                  <h3 className="text-[#F5F5F5] text-xl mb-4">
+                    Let your ember join our constellation
+                  </h3>
+                  <div className="mb-2">
+                    <NewsletterForm />
+                  </div>
+                  <p className="text-xs text-[#E8E8E8] opacity-60 mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                </div>
+              </div>
+            </section>
           </main>
           
           <Footer />
