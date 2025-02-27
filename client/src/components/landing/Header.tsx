@@ -69,15 +69,24 @@ const Header = () => {
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6 mr-4">
-            <a href="/about" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+            <span 
+              onClick={() => navigate("/about")} 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
+            >
               About
-            </a>
-            <a href="/greg-reeves" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+            </span>
+            <span 
+              onClick={() => navigate("/greg-reeves")} 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
+            >
               Greg Reeves
-            </a>
-            <a href="/sadie-gray" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+            </span>
+            <span
+              onClick={() => navigate("/sadie-gray")} 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
+            >
               Sadie Gray
-            </a>
+            </span>
           </nav>
           <button 
             className="bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-4 py-2 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300 text-sm"
@@ -110,27 +119,33 @@ const Header = () => {
           className="absolute top-0 left-0 w-full h-screen bg-[#1A1A1A] bg-opacity-95 backdrop-blur-md z-30 py-20 px-6"
         >
           <div className="flex flex-col items-center space-y-6 pt-10">
-            <a 
-              href="/about"
+            <span 
+              onClick={() => {
+                navigate("/about");
+                setIsMobileMenuOpen(false);
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               About
-            </a>
-            <a 
-              href="/greg-reeves"
+            </span>
+            <span 
+              onClick={() => {
+                navigate("/greg-reeves");
+                setIsMobileMenuOpen(false);
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Greg Reeves
-            </a>
-            <a 
-              href="/sadie-gray"
+            </span>
+            <span 
+              onClick={() => {
+                navigate("/sadie-gray");
+                setIsMobileMenuOpen(false);
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Sadie Gray
-            </a>
+            </span>
             <button 
               className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"
               onClick={() => {

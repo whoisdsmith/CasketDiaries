@@ -60,6 +60,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     return res.status(200).json({ status: "ok" });
   });
 
+  // Handle client-side routing - this must be AFTER API routes
+  // but BEFORE the static file serving in vite.ts
+  app.get(["/about", "/greg-reeves", "/sadie-gray"], (_req: Request, res: Response) => {
+    res.sendFile("index.html", { root: "./client/dist" });
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
