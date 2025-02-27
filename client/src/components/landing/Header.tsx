@@ -11,11 +11,11 @@ const Header = () => {
   const [location, navigate] = useLocation();
 
   useEffect(() => {
-    // Show header after initial landing
+    // Show header after initial landing with reduced delay
     const timer = setTimeout(() => {
       setIsVisible(true);
       controls.start({ opacity: 1 });
-    }, 1500);
+    }, 1000); // Reduced from 1500ms to 1000ms
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -34,7 +34,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
@@ -42,12 +42,11 @@ const Header = () => {
     };
   }, [controls]);
 
-  if (!isVisible) return null;
-
+  // Always render the header, but control visibility with CSS
   return (
     <motion.header
       initial={{ opacity: 0 }}
-      animate={controls}
+      animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         isScrolled ? 'bg-[#1D1D1D] bg-opacity-80 backdrop-blur-sm py-3' : 'bg-opacity-0 py-5'
       }`}
@@ -56,7 +55,7 @@ const Header = () => {
         <div className="logo">
           <Link href="/">
             <h1 className="font-serif text-lg md:text-xl tracking-wide cursor-pointer">
-              <span 
+              <span
                 className="text-[#FF9E2C]"
                 style={{
                   textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)'
@@ -69,26 +68,23 @@ const Header = () => {
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6 mr-4">
-            <span 
-              onClick={() => navigate("/about")} 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
-            >
-              About
-            </span>
-            <span 
-              onClick={() => navigate("/greg-reeves")} 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
-            >
-              Greg Reeves
-            </span>
-            <span
-              onClick={() => navigate("/sadie-gray")} 
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer"
-            >
-              Sadie Gray
-            </span>
+            <Link href="/about">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+                About
+              </span>
+            </Link>
+            <Link href="/greg-reeves">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+                Greg Reeves
+              </span>
+            </Link>
+            <Link href="/sadie-gray">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+                Sadie Gray
+              </span>
+            </Link>
           </nav>
-          <button 
+          <button
             className="bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-4 py-2 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300 text-sm"
             onClick={() => {
               document.getElementById('eternal-light')?.scrollIntoView({ behavior: 'smooth' });
@@ -97,10 +93,10 @@ const Header = () => {
             Contact
           </button>
         </div>
-        
+
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="flex flex-col space-y-1.5 p-1.5 relative z-50"
             aria-label="Toggle menu"
@@ -111,42 +107,30 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           ref={mobileMenuRef}
           className="absolute top-0 left-0 w-full h-screen bg-[#1A1A1A] bg-opacity-95 backdrop-blur-md z-30 py-20 px-6"
         >
           <div className="flex flex-col items-center space-y-6 pt-10">
-            <span 
-              onClick={() => {
-                navigate("/about");
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-            >
-              About
-            </span>
-            <span 
-              onClick={() => {
-                navigate("/greg-reeves");
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-            >
-              Greg Reeves
-            </span>
-            <span 
-              onClick={() => {
-                navigate("/sadie-gray");
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-            >
-              Sadie Gray
-            </span>
-            <button 
+            <Link href="/about">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer">
+                About
+              </span>
+            </Link>
+            <Link href="/greg-reeves">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer">
+                Greg Reeves
+              </span>
+            </Link>
+            <Link href="/sadie-gray">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer">
+                Sadie Gray
+              </span>
+            </Link>
+            <button
               className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"
               onClick={() => {
                 document.getElementById('eternal-light')?.scrollIntoView({ behavior: 'smooth' });

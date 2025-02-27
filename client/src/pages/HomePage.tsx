@@ -14,11 +14,13 @@ import Footer from '@/components/common/Footer';
 
 const HomePage = () => {
   const [showContent, setShowContent] = useState(false);
+  const [showInitialLanding, setShowInitialLanding] = useState(true);
   const [activeSection, setActiveSection] = useState('meeting-point');
-  
+
   const handleInitialLandingComplete = () => {
     setShowContent(true);
-    
+    setShowInitialLanding(false);
+
     // Create required keyframes for animations
     const styleElement = document.createElement('style');
     styleElement.textContent = `
@@ -70,8 +72,13 @@ const HomePage = () => {
 
   return (
     <div className="bg-[#1D1D1D] min-h-screen overflow-x-hidden">
-      <InitialLanding onEnter={handleInitialLandingComplete} />
-      
+      {/* Always render Header but it controls its own visibility */}
+      <Header />
+
+      {showInitialLanding && (
+        <InitialLanding onEnter={handleInitialLandingComplete} />
+      )}
+
       {showContent && (
         <>
           <ParticleSystem count={80} />
@@ -80,35 +87,35 @@ const HomePage = () => {
               The Casket Diaries
             </h1>
           </div>
-          <Header />
-          <MainNavigation 
-            activeSection={activeSection} 
-            onNavigate={handleNavigate} 
+
+          <MainNavigation
+            activeSection={activeSection}
+            onNavigate={handleNavigate}
           />
-          <MobileNavigation 
-            activeSection={activeSection} 
-            onNavigate={handleNavigate} 
+          <MobileNavigation
+            activeSection={activeSection}
+            onNavigate={handleNavigate}
           />
-          
+
           <main className="relative z-10">
-            <MeetingPointSection 
-              activeSection={activeSection} 
-              onVisible={handleSectionVisible} 
+            <MeetingPointSection
+              activeSection={activeSection}
+              onVisible={handleSectionVisible}
             />
-            <CrucibleSection 
-              activeSection={activeSection} 
-              onVisible={handleSectionVisible} 
+            <CrucibleSection
+              activeSection={activeSection}
+              onVisible={handleSectionVisible}
             />
-            <SideBySideSection 
-              activeSection={activeSection} 
-              onVisible={handleSectionVisible} 
+            <SideBySideSection
+              activeSection={activeSection}
+              onVisible={handleSectionVisible}
             />
-            <EternalLightSection 
-              activeSection={activeSection} 
-              onVisible={handleSectionVisible} 
+            <EternalLightSection
+              activeSection={activeSection}
+              onVisible={handleSectionVisible}
             />
           </main>
-          
+
           <Footer />
         </>
       )}
