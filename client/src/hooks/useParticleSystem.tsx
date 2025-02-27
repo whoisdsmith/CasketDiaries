@@ -1,21 +1,21 @@
 import { useRef, useCallback, RefObject } from 'react';
 
 class Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  color: string;
-  life: number;
-  maxLife: number;
-  flickerRate: number;
-  flickerDirection: number;
-  flicker: number;
-  rotationSpeed: number;
-  rotation: number;
-  baseSizeVariation: number;
-  pulseSpeed: number;
+  x!: number;
+  y!: number;
+  size!: number;
+  speedX!: number;
+  speedY!: number;
+  color!: string;
+  life!: number;
+  maxLife!: number;
+  flickerRate!: number;
+  flickerDirection!: number;
+  flicker!: number;
+  rotationSpeed!: number;
+  rotation!: number;
+  baseSizeVariation!: number;
+  pulseSpeed!: number;
 
   constructor(canvas: HTMLCanvasElement) {
     this.reset(canvas);
