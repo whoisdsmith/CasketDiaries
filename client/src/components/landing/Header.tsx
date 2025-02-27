@@ -67,18 +67,30 @@ const Header = () => {
           <nav className="flex space-x-6 mr-4">
             <a 
               href="/about" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/about';
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
               About
             </a>
             <a 
               href="/greg-reeves" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/greg-reeves';
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
               Greg Reeves
             </a>
             <a 
               href="/sadie-gray" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/sadie-gray';
+              }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
               Sadie Gray
@@ -118,21 +130,33 @@ const Header = () => {
             <a 
               href="/about" 
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/about';
+                setIsMobileMenuOpen(false);
+              }}
             >
               About
             </a>
             <a 
               href="/greg-reeves" 
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/greg-reeves';
+                setIsMobileMenuOpen(false);
+              }}
             >
               Greg Reeves
             </a>
             <a 
               href="/sadie-gray" 
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/sadie-gray';
+                setIsMobileMenuOpen(false);
+              }}
             >
               Sadie Gray
             </a>
