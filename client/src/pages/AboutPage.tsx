@@ -12,67 +12,41 @@ const AboutPage = () => {
       
       <header className="relative z-10 pt-8 pb-4 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <a 
-            href="/" 
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = '/';
-            }}
-            className="font-serif text-2xl md:text-3xl text-[#FF9E2C] glow-text hover:text-[#F15A29] transition-colors"
-          >
-            The Casket Diaries
-          </a>
+          <Link href="/">
+            <a className="font-serif text-2xl md:text-3xl text-[#FF9E2C] glow-text hover:text-[#F15A29] transition-colors cursor-pointer">
+              The Casket Diaries
+            </a>
+          </Link>
           
           <nav className="hidden md:flex space-x-8">
-            <a 
-              href="/" 
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/';
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors"
-            >
-              Home
-            </a>
-            <a 
-              href="/about"
-              className="text-[#FF9E2C] border-b border-[#FF9E2C]"
-            >
-              About
-            </a>
-            <a 
-              href="/greg-reeves"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/greg-reeves';
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors"
-            >
-              Greg Reeves
-            </a>
-            <a 
-              href="/sadie-gray"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/sadie-gray';
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors"
-            >
-              Sadie Gray
-            </a>
+            <Link href="/">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+                Home
+              </a>
+            </Link>
+            <Link href="/about">
+              <a className="text-[#FF9E2C] border-b border-[#FF9E2C] cursor-pointer">
+                About
+              </a>
+            </Link>
+            <Link href="/greg-reeves">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+                Greg Reeves
+              </a>
+            </Link>
+            <Link href="/sadie-gray">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+                Sadie Gray
+              </a>
+            </Link>
           </nav>
           
           <div className="md:hidden">
-            <a 
-              href="/"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/';
-              }}
-              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors"
-            >
-              Home
-            </a>
+            <Link href="/">
+              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+                Home
+              </a>
+            </Link>
           </div>
         </div>
       </header>

@@ -107,7 +107,17 @@ const HomePage = () => {
               onVisible={handleSectionVisible} 
             />
             
-
+            <div className="container mx-auto px-4 py-16">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl text-[#FF9E2C] mb-4 glow-text">
+                  Join Our Journey
+                </h2>
+                <p className="text-[#E8E8E8] mb-8">
+                  Subscribe to receive updates, exclusive content, and be the first to know when the full story of The Casket Diaries is released.
+                </p>
+                <NewsletterForm />
+              </div>
+            </div>
           </main>
           
           <Footer />
