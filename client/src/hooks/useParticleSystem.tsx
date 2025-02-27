@@ -1,4 +1,4 @@
-import { useRef, useCallback, RefObject } from 'react';
+import { useRef, useCallback, useEffect, RefObject } from 'react';
 
 class Particle {
   x!: number;
