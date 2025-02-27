@@ -191,24 +191,41 @@ export const useParticleSystem = (
   }, [particleCount, canvasRef]);
 
   const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return 0;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return 0;
+    try {
+      const canvas = canvasRef.current;
+      if (!canvas) return 0;
+      
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return 0;
 
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Update and draw particles
-    particles.current.forEach((particle) => {
-      particle.update(canvas, mousePosition.current.x, mousePosition.current.y);
-      particle.draw(ctx);
-    });
+      // Update and draw particles
+      if (particles.current && particles.current.length > 0) {
+        particles.current.forEach((particle) => {
+          try {
+            particle.update(canvas, mousePosition.current.x, mousePosition.current.y);
+            particle.draw(ctx);
+          } catch (err) {
+            console.error('Error updating particle:', err);
+          }
+        });
+      }
 
-    // Continue animation loop
-    animationFrameId.current = requestAnimationFrame(animate);
-    return animationFrameId.current;
+      // Continue animation loop
+      try {
+        animationFrameId.current = requestAnimationFrame(animate);
+      } catch (err) {
+        console.error('Error requesting animation frame:', err);
+        return 0;
+      }
+      
+      return animationFrameId.current;
+    } catch (err) {
+      console.error('Animation error:', err);
+      return 0;
+    }
   }, [canvasRef]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
@@ -216,6 +233,20 @@ export const useParticleSystem = (
     mousePosition.current.y = e.clientY;
   }, []);
 
+  // Cleanup function for animation frame
+  useEffect(() => {
+    return () => {
+      try {
+        if (animationFrameId.current) {
+          cancelAnimationFrame(animationFrameId.current);
+          animationFrameId.current = 0; // Reset after cancellation
+        }
+      } catch (err) {
+        console.error('Error during animation cleanup:', err);
+      }
+    };
+  }, []);
+  
   return {
     init,
     animate,
