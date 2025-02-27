@@ -73,6 +73,11 @@ const HomePage = () => {
       {showContent && (
         <>
           <ParticleSystem count={80} />
+          <div className="relative z-10 text-center pt-4 pb-2">
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#FF9E2C] glow-text">
+              The Casket Diaries
+            </h1>
+          </div>
           <Header />
           <MainNavigation 
             activeSection={activeSection} 
