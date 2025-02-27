@@ -1,0 +1,125 @@
+# Build "The Casket Diaries" Website
+
+## Project Overview
+Create an atmospheric, interactive website for "The Casket Diaries" that embodies the concept "Eternal Embers Through Cemetery Weather." The site should evoke powerful emotions through a dark, moody aesthetic with glowing ember elements, representing enduring love amidst darkness. This is a storytelling experience that takes visitors on an emotional journey through different sections, each with its own visual signature while maintaining cohesive design language.
+
+## Core Visual Design
+
+### Background System (Three Layers)
+1. **Base Layer**: Create a deep, dark backdrop representing "cemetery weather" that subtly shifts between environmental states (gentle rain animation, fog effects, night sky with stars)
+2. **Middle Layer**: Implement a field of responsive amber/orange ember particles that float throughout the space
+3. **Foreground Layer**: Design illuminated interactive elements and content containers that stand out against the darkness
+
+### Color Palette
+- **Primary**: Deep blues (#1A1E26, #232B38) and charcoals (#2D2D2D, #1D1D1D)
+- **Secondary**: Amber (#FF9E2C), gold (#E6C200), and warm orange (#F15A29) for ember effects
+- **Accent**: Silver/white highlights (#E8E8E8, #F5F5F5) for moonlight effects
+- **Implement** color transitions between sections to represent emotional shifts
+
+### Typography
+- Use a combination of a serif font for headings (something like "Cormorant Gaunt") and a clean sans-serif for body text
+- Create custom CSS for headlines that gives them a subtle glow effect, as if illuminated from within
+- Ensure body text maintains high readability against dark backgrounds (min contrast ratio 4.5:1)
+
+## Homepage and User Experience
+
+### Initial Landing Experience
+- Create a minimal scene showing two silhouettes standing hand-in-hand against a dark, foggy backdrop
+- Implement a single, pulsing ember particle floating between them
+- Require user interaction (click/touch) with this ember to "ignite" the full experience
+- Add subtle text prompt: "Touch the ember to begin the journey"
+
+### Main Navigation: "The Path"
+Implement a journey-based navigation with four main sections:
+1. "The Meeting Point" - representing beginnings
+2. "The Crucible" - representing challenges overcome
+3. "Side By Side" - representing commitment
+4. "Eternal Light" - representing enduring love
+
+Each section should be accessible via a navigation element designed as intertwining paths of light.
+
+## Interactive Elements
+
+### Ember Particle System
+- Implement a JavaScript particle system where ember particles flow around the cursor
+- When hovering over interactive elements, particles should gather and intensify
+- On click interactions, create momentary "ignition" effects where embers burst and reform
+- Optimize particle count based on device performance
+
+### Weather Transition System
+- Program gradual transitions between environmental elements (rain, fog, moonlight)
+- Create trigger points where user actions change weather effects
+- Ensure weather effects are always present but vary in intensity
+
+### Responsive Design
+- Design a vertical scrolling experience for mobile that preserves the emotional journey
+- Create simplified particle effects for lower-performance devices
+- Implement touch-optimized interactions for all interactive elements
+- Ensure accessibility compliance while maintaining the atmospheric experience
+
+## Section-Specific Requirements
+
+### "The Meeting Point" Section
+- Create animations of two light sources finding each other in darkness
+- Implement a gentle rain effect with moonlight breaking through clouds
+- Design an animation of two silhouettes meeting with a burst of light at contact point
+- Display song lyrics that appear as if being written by an invisible hand
+- Include a brief narrative about beginnings and first connections
+
+### "The Crucible" Section
+- Intensify the ember particle effects in this section
+- Create a visual metaphor of walking through flame together using CSS/JS animations
+- Implement a parallax scrolling effect for depth as users move through content
+- Display song lyrics that appear and fade like smoke
+- Include content about overcoming challenges together
+
+### "Side By Side" Section
+- Create a split-screen effect showing complementary imagery
+- Animate hands reaching toward each other across the divide
+- Implement mirrored weather effects on both sides of the split screen
+- Display lyrics that appear simultaneously on both sides
+- Include content about partnership and commitment
+
+### "Eternal Light" Section
+- Transform the background into a field of stars/lights against the dark backdrop
+- Create an animation of two flames joining to create a brighter light
+- Implement a countdown timer for the "coming soon" feature designed as a gradually brightening light
+- Display lyrics that reveal upcoming information
+- Include a newsletter signup form for updates
+
+## Technical Requirements
+
+### Core Technologies
+- HTML5, CSS3, JavaScript (Vanilla JS or React)
+- Canvas API for particle effects
+- Web Audio API for ambient sound (optional)
+- Responsive design principles
+- Progressive enhancement
+
+### Performance Optimizations
+- Implement progressive loading of high-quality effects
+- Create an initial simplified version that evolves into the full experience
+- Add device capability detection to adjust particle counts and effects
+- Optimize all images and assets for web delivery
+- Implement lazy loading for content below the fold
+
+### Optional Audio Features
+- Create a subtle ambient soundtrack that evolves between sections
+- Add gentle sound effects for interactions (ember bursts, etc.)
+- Include toggleable music previews from actual songs at key points
+- Always include a mute button and respect user preferences
+
+## Project Deliverables
+1. Complete responsive website with all specified sections and effects
+2. Well-commented, organized code
+3. Optimized assets for web delivery
+4. Documentation for maintaining and updating the site
+5. Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
+
+## Launch Features
+- Newsletter signup functionality
+- Social media integration
+- Countdown timer to album/content release
+- Contact form
+
+Please create this atmospheric, interactive web experience that captures the emotional journey and visual aesthetic of "The Casket Diaries" concept while ensuring good performance and accessibility.
