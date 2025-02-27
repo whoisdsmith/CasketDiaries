@@ -144,12 +144,19 @@ const SideBySideSection = ({ activeSection, onVisible }: SideBySideSectionProps)
       
       <div className="text-center">
         <blockquote 
-          className="italic text-[#FF9E2C] text-lg md:text-xl mb-2"
+          className="italic text-[#FF9E2C] text-lg md:text-xl mb-4"
           style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}
         >
           "Two flames burning as one, side by side, hand in hand."
         </blockquote>
-        <p className="text-[#E8E8E8] text-sm">— From "Intertwined", Track 8</p>
+        <p className="text-[#E8E8E8] text-sm mb-6">— From "Intertwined", Track 8</p>
+        
+        <blockquote 
+          className="italic text-[#FF9E2C] text-lg md:text-xl mb-2"
+          style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}
+        >
+          "Whatever Hell lies ahead, I'll be there fighting every demon with you. Side by side, hand in hand, there are no battles we can't get through"
+        </blockquote>
       </div>
     </SectionLayout>
   );

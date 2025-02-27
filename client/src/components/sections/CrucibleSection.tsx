@@ -130,7 +130,10 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
       </div>
       
       <div className="text-center">
-        <p className="text-[#E8E8E8] italic text-lg">"Sometimes, love means burning together rather than burning out."</p>
+        <p className="text-[#E8E8E8] italic text-lg mb-2">"Sometimes, love means burning together rather than burning out."</p>
+        <blockquote className="italic text-[#F15A29] text-lg md:text-xl mb-2" style={{ textShadow: '0 0 5px rgba(241, 90, 41, 0.7), 0 0 10px rgba(241, 90, 41, 0.5)' }}>
+          "And though the scars remain, they carry on, day by day, Holding onto the fragments, finding strength along the way"
+        </blockquote>
       </div>
     </SectionLayout>
   );

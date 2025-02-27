@@ -85,9 +85,15 @@ const EternalLightSection = ({ activeSection, onVisible }: EternalLightSectionPr
         <p className="text-[#E8E8E8] mb-4 leading-relaxed">
           Through years of love and loss, separation and reunion, Greg and Sadie discovered that some connections transcend time and circumstance. Their story—like the embers that float through cemetery weather—proves that even in the darkest places, light finds a way to persist.
         </p>
+        <blockquote className="italic text-[#E6C200] text-lg my-4" style={{ textShadow: '0 0 5px rgba(230, 194, 0, 0.7), 0 0 10px rgba(230, 194, 0, 0.5)' }}>
+          "For even in the darkness, a single spark can ignite, a love that burns forever, a beacon in the night"
+        </blockquote>
         <p className="text-[#E8E8E8] leading-relaxed">
           The Casket Diaries is their testament: a love that burns eternal, a flame that weather cannot extinguish.
         </p>
+        <blockquote className="italic text-[#E6C200] text-lg mt-4" style={{ textShadow: '0 0 5px rgba(230, 194, 0, 0.7), 0 0 10px rgba(230, 194, 0, 0.5)' }}>
+          "Hell might feel like home to others, but it's no place for us. So if someday you feel that's where you belong, I would burn up everyday, just to be with you."
+        </blockquote>
       </div>
       
       {/* Countdown Timer */}

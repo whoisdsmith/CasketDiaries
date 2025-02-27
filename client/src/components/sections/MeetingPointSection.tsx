@@ -126,7 +126,7 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
             className="italic text-[#FF9E2C] text-lg md:text-xl mb-2"
             style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}
           >
-            "When I first saw you, it was like watching an ember float through the night."
+            "That pull of gravity between you and me, shifts the earth, binds the moon to the sea. Every time we come into contact, I want to pull you close and love the shit out of you"
           </blockquote>
           <p className="text-[#E8E8E8] text-sm">— From "First Light", Track 1</p>
         </div>
