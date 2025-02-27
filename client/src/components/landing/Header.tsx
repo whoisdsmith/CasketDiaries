@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { useLocation } from 'wouter';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,6 +8,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
+  const [_, setLocation] = useLocation();
 
   useEffect(() => {
     // Show header after initial landing
@@ -69,7 +71,7 @@ const Header = () => {
               href="/about" 
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/about';
+                setLocation('/about');
               }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
@@ -79,7 +81,7 @@ const Header = () => {
               href="/greg-reeves" 
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/greg-reeves';
+                setLocation('/greg-reeves');
               }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
@@ -89,7 +91,7 @@ const Header = () => {
               href="/sadie-gray" 
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/sadie-gray';
+                setLocation('/sadie-gray');
               }}
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
             >
@@ -132,7 +134,7 @@ const Header = () => {
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/about';
+                setLocation('/about');
                 setIsMobileMenuOpen(false);
               }}
             >
@@ -143,7 +145,7 @@ const Header = () => {
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/greg-reeves';
+                setLocation('/greg-reeves');
                 setIsMobileMenuOpen(false);
               }}
             >
@@ -154,7 +156,7 @@ const Header = () => {
               className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
               onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/sadie-gray';
+                setLocation('/sadie-gray');
                 setIsMobileMenuOpen(false);
               }}
             >
