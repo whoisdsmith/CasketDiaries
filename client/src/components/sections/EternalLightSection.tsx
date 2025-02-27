@@ -109,6 +109,12 @@ const EternalLightSection = ({ activeSection, onVisible }: EternalLightSectionPr
       <div className="bg-[#1A1E26] rounded-lg p-6 md:p-8 border border-[#FF9E2C] border-opacity-20">
         <h3 className="font-serif text-xl mb-4 text-[#F5F5F5] text-center">Join Our Journey</h3>
         
+        <div className="mb-6">
+          <blockquote className="italic text-center text-[#FF9E2C] text-lg mb-4" style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}>
+            "Out of all the things you love, you always leave yourself off that list. Stop wasting your life in places where people don't see you exist."
+          </blockquote>
+        </div>
+        
         <NewsletterForm />
         
         <p className="text-[#E8E8E8] text-sm mt-4 text-center">
