@@ -8,7 +8,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const [location, setLocation] = useLocation();
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     // Show header after initial landing
@@ -69,21 +69,15 @@ const Header = () => {
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6 mr-4">
-            <Link href="/about">
-              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
-                About
-              </span>
-            </Link>
-            <Link href="/greg-reeves">
-              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
-                Greg Reeves
-              </span>
-            </Link>
-            <Link href="/sadie-gray">
-              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
-                Sadie Gray
-              </span>
-            </Link>
+            <a href="/about" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+              About
+            </a>
+            <a href="/greg-reeves" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+              Greg Reeves
+            </a>
+            <a href="/sadie-gray" className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
+              Sadie Gray
+            </a>
           </nav>
           <button 
             className="bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-4 py-2 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300 text-sm"
@@ -116,30 +110,27 @@ const Header = () => {
           className="absolute top-0 left-0 w-full h-screen bg-[#1A1A1A] bg-opacity-95 backdrop-blur-md z-30 py-20 px-6"
         >
           <div className="flex flex-col items-center space-y-6 pt-10">
-            <Link href="/about">
-              <span 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </span>
-            </Link>
-            <Link href="/greg-reeves">
-              <span 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Greg Reeves
-              </span>
-            </Link>
-            <Link href="/sadie-gray">
-              <span 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sadie Gray
-              </span>
-            </Link>
+            <a 
+              href="/about"
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a 
+              href="/greg-reeves"
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Greg Reeves
+            </a>
+            <a 
+              href="/sadie-gray"
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Sadie Gray
+            </a>
             <button 
               className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"
               onClick={() => {

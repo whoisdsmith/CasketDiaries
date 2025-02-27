@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import ParticleSystem from '@/components/common/ParticleSystem';
 import InitialLanding from '@/components/landing/InitialLanding';
 import Header from '@/components/landing/Header';
