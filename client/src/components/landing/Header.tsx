@@ -55,36 +55,34 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="logo">
           <Link href="/">
-            <a className="cursor-pointer">
-              <h1 className="font-serif text-lg md:text-xl tracking-wide">
-                <span 
-                  className="text-[#FF9E2C]"
-                  style={{
-                    textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)'
-                  }}
-                >
-                  The Casket Diaries
-                </span>
-              </h1>
-            </a>
+            <h1 className="font-serif text-lg md:text-xl tracking-wide cursor-pointer">
+              <span 
+                className="text-[#FF9E2C]"
+                style={{
+                  textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)'
+                }}
+              >
+                The Casket Diaries
+              </span>
+            </h1>
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6 mr-4">
             <Link href="/about">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
                 About
-              </a>
+              </span>
             </Link>
             <Link href="/greg-reeves">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
                 Greg Reeves
-              </a>
+              </span>
             </Link>
             <Link href="/sadie-gray">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 cursor-pointer">
                 Sadie Gray
-              </a>
+              </span>
             </Link>
           </nav>
           <button 
@@ -119,28 +117,28 @@ const Header = () => {
         >
           <div className="flex flex-col items-center space-y-6 pt-10">
             <Link href="/about">
-              <a 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              <span 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
-              </a>
+              </span>
             </Link>
             <Link href="/greg-reeves">
-              <a 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              <span 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Greg Reeves
-              </a>
+              </span>
             </Link>
             <Link href="/sadie-gray">
-              <a 
-                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              <span 
+                className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Sadie Gray
-              </a>
+              </span>
             </Link>
             <button 
               className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"

@@ -43,39 +43,39 @@ const SadieGrayPage = () => {
       <header className="relative z-10 pt-8 pb-4 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/">
-            <a className="font-serif text-2xl md:text-3xl text-[#FF9E2C] glow-text hover:text-[#F15A29] transition-colors cursor-pointer">
+            <span className="font-serif text-2xl md:text-3xl text-[#FF9E2C] glow-text hover:text-[#F15A29] transition-colors cursor-pointer">
               The Casket Diaries
-            </a>
+            </span>
           </Link>
           
           <nav className="hidden md:flex space-x-8">
             <Link href="/">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
                 Home
-              </a>
+              </span>
             </Link>
             <Link href="/about">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
                 About
-              </a>
+              </span>
             </Link>
             <Link href="/greg-reeves">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
                 Greg Reeves
-              </a>
+              </span>
             </Link>
             <Link href="/sadie-gray">
-              <a className="text-[#FF9E2C] border-b border-[#FF9E2C] cursor-pointer">
+              <span className="text-[#FF9E2C] border-b border-[#FF9E2C] cursor-pointer">
                 Sadie Gray
-              </a>
+              </span>
             </Link>
           </nav>
           
           <div className="md:hidden">
             <Link href="/">
-              <a className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
+              <span className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors cursor-pointer">
                 Home
-              </a>
+              </span>
             </Link>
           </div>
         </div>
