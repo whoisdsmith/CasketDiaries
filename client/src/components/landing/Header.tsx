@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
 
   useEffect(() => {
@@ -22,10 +24,19 @@ const Header = () => {
       }
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [controls]);
 
@@ -52,7 +63,27 @@ const Header = () => {
             </span>
           </h1>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center space-x-6">
+          <nav className="flex space-x-6 mr-4">
+            <a 
+              href="/about" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
+            >
+              About
+            </a>
+            <a 
+              href="/greg-reeves" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
+            >
+              Greg Reeves
+            </a>
+            <a 
+              href="/sadie-gray" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300"
+            >
+              Sadie Gray
+            </a>
+          </nav>
           <button 
             className="bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-4 py-2 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300 text-sm"
             onClick={() => {
@@ -62,7 +93,61 @@ const Header = () => {
             Contact
           </button>
         </div>
+        
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="flex flex-col space-y-1.5 p-1.5 relative z-50"
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-[#FF9E2C] transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-[#FF9E2C] transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`block w-6 h-0.5 bg-[#FF9E2C] transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </button>
+        </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div 
+          ref={mobileMenuRef}
+          className="absolute top-0 left-0 w-full h-screen bg-[#1A1A1A] bg-opacity-95 backdrop-blur-md z-30 py-20 px-6"
+        >
+          <div className="flex flex-col items-center space-y-6 pt-10">
+            <a 
+              href="/about" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a 
+              href="/greg-reeves" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Greg Reeves
+            </a>
+            <a 
+              href="/sadie-gray" 
+              className="text-[#F5F5F5] hover:text-[#FF9E2C] transition-colors duration-300 text-xl"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Sadie Gray
+            </a>
+            <button 
+              className="mt-8 bg-[#2D2D2D] hover:bg-[#232B38] text-[#F5F5F5] px-6 py-3 rounded-full border border-[#FF9E2C] border-opacity-30 transition-colors duration-300"
+              onClick={() => {
+                document.getElementById('eternal-light')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
     </motion.header>
   );
 };
