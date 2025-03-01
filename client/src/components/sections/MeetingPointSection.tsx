@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import SectionLayout from '../landing/SectionLayout';
+import coupleImage1 from '../../assets/couple-image-1.jpg';
 
 interface MeetingPointSectionProps {
   activeSection: string;
@@ -89,7 +90,7 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
           <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-xl">
             <div className="absolute inset-0 bg-[#1D1D1D] flex items-center justify-center">
               <img 
-                src="/images/20250210_224743375_iOS 1.jpg" 
+                src={coupleImage1} 
                 alt="Greg and Sadie" 
                 className="w-full h-full object-cover object-center opacity-80"
               />
