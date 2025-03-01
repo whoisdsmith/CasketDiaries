@@ -39,7 +39,7 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
   return (
     <SectionLayout
       id="meeting-point"
-      title="The Meeting Point"
+      title="First Encounter"
       activeSection={activeSection}
       onVisible={onVisible}
       weatherEffect="rain"
@@ -72,16 +72,16 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
               borderRight: '2px solid #E6C200'
             }}
           >
-            Two souls whose paths intertwine in the most unexpected of places
+            Where Two Broken Paths Converged
           </p>
         </div>
         
         <div className="bg-[#2D2D2D] bg-opacity-40 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-[#F5F5F5] border-opacity-10 mb-8">
           <p className="text-[#E8E8E8] mb-4 leading-relaxed">
-            Greg, a musician with restless hands and a past he's always running from, meets Sadie, a woman who sees beauty in the broken. Their first encounter—a chance meeting in a bookstore parking lot—sets in motion a love that will burn fiercely against the darkness of their pasts.
+            In the quiet of a Barnes & Noble parking lot, beneath the November chill of 2011, two souls collided. Greg, haunted by the absence of his son Edward and battling demons of depression, met Sadie—a young mother carrying the weight of her fractured childhood beneath a gray Yellowcard shirt and a cautious smile.
           </p>
-          <p className="text-[#E8E8E8] leading-relaxed">
-            Together, they forge a connection built on whispered promises and the belief that love alone can keep them whole. But as they'll soon discover, some flames burn too bright to contain.
+          <p className="text-[#E8E8E8] mb-4 leading-relaxed">
+            Their connection—immediate and electric—blossomed from Facebook messages into a love that would redefine them both. What began as a shared passion for music transformed into a refuge where two wounded hearts found unexpected healing.
           </p>
         </div>
         
@@ -126,9 +126,11 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
             className="italic text-[#FF9E2C] text-lg md:text-xl mb-2"
             style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}
           >
-            "That pull of gravity between you and me, shifts the earth, binds the moon to the sea. Every time we come into contact, I want to pull you close and love the shit out of you"
+            "I'll never forget the smile she gave me when we got out of cars to finally meet. I'll never forget the way my stomach was tied in knots and how my heart was racing like an Olympian. I'll never forget the way I felt that night, cause I still feel the same way this very day."
           </blockquote>
-          <p className="text-[#E8E8E8] text-sm">— From "First Light", Track 1</p>
+          <p className="text-[#E8E8E8] mt-6 text-lg">
+            "I've been in love with you since the day I saw you walk up to my car back in 2011. I've never pictured a future that didn't have you in it."
+          </p>
         </div>
       </div>
     </SectionLayout>

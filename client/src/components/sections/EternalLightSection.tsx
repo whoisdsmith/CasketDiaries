@@ -49,7 +49,7 @@ const EternalLightSection = ({ activeSection, onVisible }: EternalLightSectionPr
   return (
     <SectionLayout
       id="eternal-light"
-      title="Eternal Light"
+      title="Until The Last Light Fades"
       titleColor="text-[#E6C200]"
       activeSection={activeSection}
       onVisible={onVisible}
@@ -83,17 +83,17 @@ const EternalLightSection = ({ activeSection, onVisible }: EternalLightSectionPr
       
       <div className="bg-[#2D2D2D] bg-opacity-40 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-[#E6C200] border-opacity-20 mb-12">
         <p className="text-[#E8E8E8] mb-4 leading-relaxed">
-          Through years of love and loss, separation and reunion, Greg and Sadie discovered that some connections transcend time and circumstance. Their story—like the embers that float through cemetery weather—proves that even in the darkest places, light finds a way to persist.
+          Since that November night in 2011, Greg and Sadie's love has weathered separations, job losses, mental health crises, and the constant challenges of everyday life. It has endured because they made a choice—to never stop fighting for each other, to never surrender to the darkness alone.
+        </p>
+        <p className="text-[#E8E8E8] mb-4 leading-relaxed">
+          Their promise, immortalized in lyrics and love letters spanning more than a decade, is to remain together "until the last light fades"—a vow to accompany each other through every challenge life presents, to find hope in each other when all else seems lost.
         </p>
         <blockquote className="italic text-[#E6C200] text-lg my-4" style={{ textShadow: '0 0 5px rgba(230, 194, 0, 0.7), 0 0 10px rgba(230, 194, 0, 0.5)' }}>
-          "For even in the darkness, a single spark can ignite, a love that burns forever, a beacon in the night"
+          "For even in the darkness, when hope seems so far away, I will hold your hand until our final dying day."
         </blockquote>
         <p className="text-[#E8E8E8] leading-relaxed">
-          The Casket Diaries is their testament: a love that burns eternal, a flame that weather cannot extinguish.
+          The Casket Diaries chronicles this extraordinary journey—not of perfect people, but of two souls who found in each other something worth fighting for, even on the days when they couldn't find that worth within themselves.
         </p>
-        <blockquote className="italic text-[#E6C200] text-lg mt-4" style={{ textShadow: '0 0 5px rgba(230, 194, 0, 0.7), 0 0 10px rgba(230, 194, 0, 0.5)' }}>
-          "Hell might feel like home to others, but it's no place for us. So if someday you feel that's where you belong, I would burn up everyday, just to be with you."
-        </blockquote>
       </div>
       
       {/* Countdown Timer */}
@@ -107,18 +107,21 @@ const EternalLightSection = ({ activeSection, onVisible }: EternalLightSectionPr
       
       {/* Newsletter Signup */}
       <div className="bg-[#1A1E26] rounded-lg p-6 md:p-8 border border-[#FF9E2C] border-opacity-20">
-        <h3 className="font-serif text-xl mb-4 text-[#F5F5F5] text-center">Join Our Journey</h3>
+        <h3 className="font-serif text-xl mb-4 text-[#F5F5F5] text-center">Join The Casket Diaries Journey</h3>
         
         <div className="mb-6">
           <blockquote className="italic text-center text-[#FF9E2C] text-lg mb-4" style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}>
             "Out of all the things you love, you always leave yourself off that list. Stop wasting your life in places where people don't see you exist."
           </blockquote>
+          <p className="text-[#E8E8E8] text-center mb-4">
+            Subscribe to receive new chapters, behind-the-scenes insights, and exclusive content about Greg and Sadie's continuing story.
+          </p>
         </div>
         
         <NewsletterForm />
         
         <p className="text-[#E8E8E8] text-sm mt-4 text-center">
-          Be notified when the full experience launches
+          No spam, only updates about The Casket Diaries
         </p>
       </div>
     </SectionLayout>
