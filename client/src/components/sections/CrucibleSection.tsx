@@ -51,13 +51,19 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
         ref={parallaxRef}
         className="relative h-80 mb-12 overflow-hidden rounded-lg"
       >
-        <div data-depth="0.2" className="absolute inset-0 bg-[#1A1E26]"></div>
+        <div data-depth="0.2" className="absolute inset-0 bg-[#1A1E26]">
+          <img 
+            src="/attached_assets/images/20250224_055613957_iOS.jpg" 
+            alt="Greg and Sadie together" 
+            className="w-full h-full object-cover object-center blur-[2px] opacity-50 mix-blend-overlay"
+          />
+        </div>
         <div data-depth="0.4" className="absolute left-1/4 top-1/3 w-32 h-32 bg-[#F15A29] rounded-full blur-xl opacity-30"></div>
         <div data-depth="0.5" className="absolute right-1/4 bottom-1/4 w-40 h-40 bg-[#E6C200] rounded-full blur-xl opacity-20"></div>
         <div data-depth="0.7" className="absolute inset-0 flex items-center justify-center">
           <div className="w-full max-w-xs text-center">
-            <p className="text-[#F5F5F5] text-2xl font-serif">Forged in Flames</p>
-            <p className="text-[#E8E8E8] text-sm mt-2">Where love endures through life's fiercest trials</p>
+            <p className="text-[#F5F5F5] text-2xl font-serif" style={{ textShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}>Forged in Flames</p>
+            <p className="text-[#E8E8E8] text-sm mt-2" style={{ textShadow: '0 0 8px rgba(0, 0, 0, 0.8)' }}>Where love endures through life's fiercest trials</p>
           </div>
         </div>
       </div>

@@ -88,32 +88,16 @@ const MeetingPointSection = ({ activeSection, onVisible }: MeetingPointSectionPr
         <div className="mb-8 relative">
           <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-xl">
             <div className="absolute inset-0 bg-[#1D1D1D] flex items-center justify-center">
-              <motion.svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="120" 
-                height="120" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="#F5F5F5" 
-                strokeWidth="1" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-                initial={{ opacity: 0.3 }}
-                animate={{ opacity: 0.7 }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-              >
-                <path d="M17.3 5c.2.7.3 1.4.3 2.1v.1"></path>
-                <path d="M17 7.2v.01"></path>
-                <path d="M12 19c1.9 0 3.6-1.2 4.2-3"></path>
-                <path d="M12 19c-3.3 0-6-2.7-6-6 0-2 .5-3.4 1.5-5.4C9.5 4.8 12 3 13 2c2 3 5 4 7 6-2.7-1.4-5.7.9-5.5 3.2.1 1.2.7 1.8 1.5 2.3"></path>
-                <path d="M17.5 8C19 9.5 20 11.2 20 13c0 2-1.3 4-2 5-1.3-2.5-1-3.5-1-3.5 1-2-1-3-1-3 1-2-.5-3-.5-3 1-2-1-3-1-3 1-2-2-2.5-2-2.5C13 8 12 5 12 5c-.5.8-1.8 2.4-3 3"></path>
-                <path d="M11 13c-.3-1.4.2-2.9 1.2-3.8"></path>
-              </motion.svg>
+              <img 
+                src="/attached_assets/images/20250210_224743375_iOS 1.jpg" 
+                alt="Greg and Sadie" 
+                className="w-full h-full object-cover object-center opacity-80"
+              />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1D] to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1D] via-[#1D1D1D50] to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <p className="text-[#F5F5F5] italic"
-                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
+              <p className="text-[#F5F5F5] italic font-medium text-lg"
+                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
               >
                 "In darkness, we found each other's light."
               </p>
