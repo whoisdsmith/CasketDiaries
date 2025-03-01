@@ -53,7 +53,7 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
       >
         <div data-depth="0.2" className="absolute inset-0 bg-[#1A1E26]">
           <img 
-            src="/attached_assets/images/20250224_055613957_iOS.jpg" 
+            src="/images/20250224_055613957_iOS.jpg" 
             alt="Greg and Sadie together" 
             className="w-full h-full object-cover object-center blur-[2px] opacity-50 mix-blend-overlay"
           />
