@@ -52,7 +52,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="logo">
+        <div className="logo flex-1 text-center">
           <Link href="/">
             <h1 className="font-serif text-lg md:text-xl tracking-wide cursor-pointer">
               <span

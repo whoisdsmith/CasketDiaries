@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#1D1D1D] border-t border-[#FF9E2C] border-opacity-20 py-8 relative z-20">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div>
+        <div className="flex flex-col items-center gap-6">
+          <div className="text-center">
             <h2 
               className="font-serif text-xl text-[#FF9E2C] mb-2"
               style={{ textShadow: '0 0 5px rgba(255, 158, 44, 0.7), 0 0 10px rgba(255, 158, 44, 0.5)' }}

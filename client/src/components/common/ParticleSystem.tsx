@@ -20,7 +20,13 @@ const ParticleSystem = ({
     init();
     
     // Start the animation loop
-    const animationId = animate();
+    let animationId = 0;
+    
+    try {
+      animationId = animate() || 0;
+    } catch (err) {
+      console.error('Animation error:', err);
+    }
     
     // Track mouse position
     window.addEventListener('mousemove', handleMouseMove);
@@ -40,7 +46,15 @@ const ParticleSystem = ({
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationId);
+      
+      // Only cancel if we have a valid animation ID
+      if (animationId) {
+        try {
+          cancelAnimationFrame(animationId);
+        } catch (err) {
+          console.error('Error cancelling animation frame:', err);
+        }
+      }
     };
   }, [init, animate, handleMouseMove]);
 

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import SectionLayout from '../landing/SectionLayout';
+import coupleImage2 from '../../assets/couple-image-2.jpg';
 
 interface CrucibleSectionProps {
   activeSection: string;
@@ -40,7 +41,7 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
   return (
     <SectionLayout
       id="crucible"
-      title="The Crucible"
+      title="A Love That Burns Forever"
       titleColor="text-[#F15A29]"
       activeSection={activeSection}
       onVisible={onVisible}
@@ -51,23 +52,32 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
         ref={parallaxRef}
         className="relative h-80 mb-12 overflow-hidden rounded-lg"
       >
-        <div data-depth="0.2" className="absolute inset-0 bg-[#1A1E26]"></div>
+        <div data-depth="0.2" className="absolute inset-0 bg-[#1A1E26]">
+          <img 
+            src={coupleImage2} 
+            alt="Greg and Sadie together" 
+            className="w-full h-full object-cover object-center blur-[2px] opacity-50 mix-blend-overlay"
+          />
+        </div>
         <div data-depth="0.4" className="absolute left-1/4 top-1/3 w-32 h-32 bg-[#F15A29] rounded-full blur-xl opacity-30"></div>
         <div data-depth="0.5" className="absolute right-1/4 bottom-1/4 w-40 h-40 bg-[#E6C200] rounded-full blur-xl opacity-20"></div>
         <div data-depth="0.7" className="absolute inset-0 flex items-center justify-center">
           <div className="w-full max-w-xs text-center">
-            <p className="text-[#F5F5F5] text-2xl font-serif">Walking Through Fire</p>
-            <p className="text-[#E8E8E8] text-sm mt-2">Together they face the flames of their pasts</p>
+            <p className="text-[#F5F5F5] text-2xl font-serif" style={{ textShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}>Forged in Flames</p>
+            <p className="text-[#E8E8E8] text-sm mt-2" style={{ textShadow: '0 0 8px rgba(0, 0, 0, 0.8)' }}>Where love endures through life's fiercest trials</p>
           </div>
         </div>
       </div>
       
       <div className="bg-[#2D2D2D] bg-opacity-40 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-[#F15A29] border-opacity-20 mb-12">
         <p className="text-[#E8E8E8] mb-4 leading-relaxed">
-          As their love deepens, Greg and Sadie must confront the demons they've both spent years running from. His struggles with addiction and her fear of abandonment become the crucible in which their relationship is tested.
+          Love isn't perfection—it's persistence. Through addiction, self-destruction, abandonment and mental illness, Greg and Sadie refused to let their flame extinguish. The challenges that might have broken other relationships only deepened their commitment to each other.
+        </p>
+        <p className="text-[#E8E8E8] mb-4 leading-relaxed">
+          For twelve years they've weathered each storm together: her childhood trauma and his ongoing depression, the loss of his son and her fear of inadequacy. Every setback became another thread binding them closer, proving that even amid darkness, their love continues to provide light.
         </p>
         <p className="text-[#E8E8E8] leading-relaxed">
-          Every relationship faces its trials by fire. For Greg and Sadie, the question becomes: will the flames consume them, or will they emerge stronger, forged anew in the heat of their challenges?
+          This section, named for their most poignant love letter, captures the essence of their bond—how they continue to choose each other every day, despite knowing every imperfection, every wound, every scar.
         </p>
       </div>
       
@@ -99,9 +109,9 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
           </div>
           <div className="p-4">
             <blockquote className="text-[#F15A29] italic mb-2">
-              "The darkest flames burn inside"
+              "You are the air in my lungs, the blood in my veins. I'd rather die than spend another second without you."
             </blockquote>
-            <p className="text-[#E8E8E8] text-sm">— From "Burning Memory", Track 4</p>
+            <p className="text-[#E8E8E8] text-sm">— Greg to Sadie, 2015</p>
           </div>
         </div>
         <div className="bg-[#1A1E26] rounded-lg overflow-hidden shadow-lg relative">
@@ -122,17 +132,17 @@ const CrucibleSection = ({ activeSection, onVisible }: CrucibleSectionProps) => 
           </div>
           <div className="p-4">
             <blockquote className="text-[#F15A29] italic mb-2">
-              "Your hand in mine as we walk through fire"
+              "When I close my eyes, I still see you surrounded by burning embers, your hand extended toward mine."
             </blockquote>
-            <p className="text-[#E8E8E8] text-sm">— From "Test By Fire", Track 5</p>
+            <p className="text-[#E8E8E8] text-sm">— Sadie to Greg, 2020</p>
           </div>
         </div>
       </div>
       
       <div className="text-center">
-        <p className="text-[#E8E8E8] italic text-lg mb-2">"Sometimes, love means burning together rather than burning out."</p>
+        <p className="text-[#E8E8E8] italic text-lg mb-2">"For a love that burns forever, no trial is too great, no darkness too deep."</p>
         <blockquote className="italic text-[#F15A29] text-lg md:text-xl mb-2" style={{ textShadow: '0 0 5px rgba(241, 90, 41, 0.7), 0 0 10px rgba(241, 90, 41, 0.5)' }}>
-          "And though the scars remain, they carry on, day by day, Holding onto the fragments, finding strength along the way"
+          "Hell might feel like home to others, but it's no place for us. So if someday you feel that's where you belong, I would burn up everyday, just to be with you."
         </blockquote>
       </div>
     </SectionLayout>
